@@ -97,26 +97,26 @@ export default function TeamSlider() {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          {/* Desktop View - 3 cards */}
+          {/* Desktop View - 4 cards */}
           <div className="hidden md:block">
             <motion.div
               className="flex transition-transform duration-500 ease-in-out"
               style={{
-                transform: `translateX(-${(currentIndex * 100) / 3}%)`
+                transform: `translateX(-${(currentIndex * 100) / 4}%)`
               }}
             >
               {duplicatedMembers.map((member, index) => (
                 <div
                   key={`${member.id}-${index}`}
-                  className="flex-shrink-0 w-1/3 px-4"
+                  className="flex-shrink-0 w-1/4 px-3"
                 >
-                  <TeamMemberCard member={member} index={index % 3} />
+                  <TeamMemberCard member={member} index={index % 4} />
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* Mobile View - 1 card */}
+          {/* Mobile/Tablet View - 2 cards on tablet, 1 on mobile */}
           <div className="md:hidden">
             <motion.div
               className="flex transition-transform duration-500 ease-in-out"
@@ -127,7 +127,7 @@ export default function TeamSlider() {
               {duplicatedMembers.map((member, index) => (
                 <div
                   key={`${member.id}-${index}`}
-                  className="flex-shrink-0 w-full px-4"
+                  className="flex-shrink-0 w-full sm:w-1/2 px-4"
                 >
                   <TeamMemberCard member={member} index={0} />
                 </div>
@@ -182,22 +182,22 @@ function TeamMemberCard({ member, index }: { member: any, index: number }) {
       viewport={{ once: true }}
       className="text-center group cursor-pointer"
     >
-      <div className="relative mb-6 mx-auto w-48 h-48">
+      <div className="relative mb-6 mx-auto w-40 h-40 md:w-44 md:h-44">
         {/* Circular image container with hover effects */}
         <div className="w-full h-full rounded-full overflow-hidden border-4 border-transparent group-hover:border-red-500 transition-all duration-500 shadow-2xl group-hover:shadow-red-500/50 group-hover:scale-105">
           {!imageError ? (
             <Image
               src={member.image}
               alt={member.name}
-              width={192}
-              height={192}
+              width={176}
+              height={176}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               onError={() => setImageError(true)}
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-red-600/30 via-yellow-500/20 to-red-800/30 flex items-center justify-center">
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-2 bg-gradient-to-br from-red-500 to-yellow-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                <div className="w-16 h-16 mx-auto mb-2 bg-gradient-to-br from-red-500 to-yellow-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
                   {member.name.split(' ').map((n: string) => n[0]).join('')}
                 </div>
               </div>
