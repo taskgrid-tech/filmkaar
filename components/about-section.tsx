@@ -1,14 +1,14 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Camera, Film, Award, Users } from "lucide-react"
+import { Camera, Film, Award, Users, Newspaper } from "lucide-react"
 
 export default function AboutSection() {
   const stats = [
-    { icon: Film, number: "50+", label: "Films Produced" },
-    { icon: Award, number: "25+", label: "Awards Won" },
-    { icon: Users, number: "100+", label: "Happy Clients" },
-    { icon: Camera, number: "10+", label: "Years Experience" },
+    { icon: Film, number: "13+", label: "Films Produced" },
+    { icon: Newspaper, number: "5+", label: "Press Release" },
+    { icon: Users, number: "1000+", label: "Subscribers" },
+    { icon: Camera, number: "5+", label: "Years Experience" },
   ]
 
   return (

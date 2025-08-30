@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "The Filmkaar Production - Film Production House",
+  title: "The Filmkaar Production",
   description: "Professional film production house creating exceptional cinematic experiences",
   generator: "v0.app",
 }

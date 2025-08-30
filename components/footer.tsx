@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, Clock } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -12,8 +12,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-red-500">The Filmkaar Production</h3>
             <p className="text-gray-300 leading-relaxed">
-              Creating cinematic masterpieces that captivate audiences and tell compelling stories through the art of
-              filmmaking.
+              One frame at a time
             </p>
             <div className="flex space-x-4">
               {/* <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-300">
@@ -81,15 +80,11 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin size={16} className="text-red-500 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">123 Film Street, Cinema City, Mumbai - 400001, India</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone size={16} className="text-red-500 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">+91 98765 43210</span>
+                <span className="text-gray-300 text-sm">Greater Ratan Gold, Ujjain, Madhya Pradesh 456001, India</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-red-500 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">info@filmkaarproduction.com</span>
+                <span className="text-gray-300 text-sm">admin@thefilmkaarproduction.com</span>
               </div>
             </div>
           </div>

@@ -18,3 +18,18 @@ const nextConfig = {
 };
 
 export default nextConfig;
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   eslint: {
+//     ignoreDuringBuilds: true,
+//   },
+//   typescript: {
+//     ignoreBuildErrors: true,
+//   },
+//   images: {
+//     domains: ['commondatastorage.googleapis.com'],
+//     unoptimized: true,
+//   },
+// };
+
+// export default nextConfig;
