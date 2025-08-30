@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar"
 import HeroSlider from "@/components/hero-slider"
 import FilmsSection from "@/components/films-section"
 import AboutSection from "@/components/about-section"
+import TeamSlider from "@/components/team-slider"
 import Footer from "@/components/footer"
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSlider />
       <FilmsSection />
       <AboutSection />
+      <TeamSlider />
       <Footer />
     </main>
   )
