@@ -1,9 +1,20 @@
+"use client"
+
+import { useState } from "react"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import ApplicationModal from "@/components/application-modal"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function CareersPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedJob, setSelectedJob] = useState("")
+
+  const handleApplyClick = (jobTitle: string) => {
+    setSelectedJob(jobTitle)
+    setIsModalOpen(true)
+  }
   const jobOpenings = [
     {
       title: "Film Director",
@@ -95,7 +106,10 @@ export default function CareersPage() {
                           {job.department} • {job.location} • {job.type}
                         </CardDescription>
                       </div>
-                      <Button className="bg-gradient-to-r from-red-500 to-yellow-500 hover:from-red-600 hover:to-yellow-600">
+                      <Button 
+                        onClick={() => handleApplyClick(job.title)}
+                        className="bg-gradient-to-r from-red-500 to-yellow-500 hover:from-red-600 hover:to-yellow-600"
+                      >
                         Apply Now
                       </Button>
                     </div>
@@ -114,7 +128,10 @@ export default function CareersPage() {
               We're always looking for talented individuals. Send us your portfolio and let's discuss how you can
               contribute to our team.
             </p>
-            <Button className="bg-gradient-to-r from-red-500 to-yellow-500 hover:from-red-600 hover:to-yellow-600">
+            <Button 
+              onClick={() => handleApplyClick("General Application")}
+              className="bg-gradient-to-r from-red-500 to-yellow-500 hover:from-red-600 hover:to-yellow-600"
+            >
               Send Your Portfolio
             </Button>
           </div>
@@ -122,6 +139,13 @@ export default function CareersPage() {
       </main>
 
       <Footer />
+      
+      {/* Application Modal */}
+      <ApplicationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        jobTitle={selectedJob}
+      />
     </div>
   )
 }
